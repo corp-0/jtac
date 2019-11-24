@@ -11,11 +11,22 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
 
-setup_requirements = [ ]
+with open('requirements.txt') as f:
+    reqs = f.read().splitlines()
 
-test_requirements = [ ]
+with open('requirements_test.txt') as f:
+    req_test = f.read().splitlines()
+
+with open('requirements_dev.txt') as f:
+    req_devs = f.read().splitlines()
+
+
+requirements = reqs
+
+setup_requirements = req_devs
+
+test_requirements = req_test
 
 setup(
     author="Andrés Franco Riquelme Sandoval",
@@ -25,8 +36,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',

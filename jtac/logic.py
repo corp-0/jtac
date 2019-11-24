@@ -70,7 +70,6 @@ def generate_servers(_PROCNAME):
     c = wmi.WMI().Win32_process()
     for element in c:
         if element.Name == _PROCNAME:
-            cl = element.CommandLine
             port = re.search('-port=(\d*)', str(element.CommandLine)).group(1)
             data = {
                 port: {
@@ -121,7 +120,7 @@ def kill_server(port):
         print("Can't kill server at " + port)
         print(str(e))
     else:
-        print('Server at '+port+' is gone!')
+        print('Server at ' + port + ' is gone!')
 
 
 def start_server(port):
@@ -143,7 +142,6 @@ def start_server(port):
 
 def update_server_info(port, **kwargs):
     global _SERVERS
-    server_list = _SERVERS['servers']
 
     key = kwargs['key']
     value = kwargs['value']
@@ -153,11 +151,13 @@ def update_server_info(port, **kwargs):
 
     write_json(_SERVERS, _APPSTORE)
 
+
 def debug():
     c = wmi.WMI().Win32_process()
     for element in c:
         if "arma3server" in element.Name:
-            print(element.Name + ' || '+ str(element.ProcessId) +' || ' + str(element.CommandLine))
+            print(element.Name + ' || ' + str(element.ProcessId) + ' || ' + str(element.CommandLine))
+
 
 def main():
     """Launcher."""

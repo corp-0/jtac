@@ -7,9 +7,9 @@ environment:
     TWINE_PASSWORD:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
     TWINE_NON_INTERACTIVE: true
-  matrix:
-    - PYTHON: "C:\\Python37-x64"
-      TOXENV: "py37"
+
+  PYTHON: "C:\\Python37-x64"
+  TOXENV: "py37"
 
 install:
 - pip install tox

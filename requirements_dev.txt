@@ -5,5 +5,5 @@ flake8
 tox
 coverage
 Sphinx
-twine
+twine==1.12
 python-semantic-release==4.3.3

@@ -7,14 +7,15 @@ environment:
     TWINE_PASSWORD:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
     TWINE_NON_INTERACTIVE: true
+  matrix:
+  - TOXENV: py36
+  - TOXENV: py37
+  - TOXENV: py38
 
-  PYTHON: "C:\\Python37-x64"
-  TOXENV: "py37"
+build: false 
 
 install:
 - pip install tox
-
-build: false  # Not a C# project, build stuff at the test step instead.
 
 test_script:
 - tox
@@ -22,9 +23,3 @@ test_script:
 deploy_script:
   - python setup.py sdist bdist_wheel
   - twine upload dist\*
-
-artifacts:
-  - path: dist\*
-
-#on_success:
-#  - TODO: upload the content of dist/*.whl to a public wheelhouse

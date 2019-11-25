@@ -27,7 +27,7 @@ install:
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - "python --version"
   - "pip install --disable-pip-version-check --user --upgrade pip"
-  - "%PYTHON%\\python.exe python pip install -r requirements_dev.txt"
+  - "%CMD_IN_ENV%\\python.exe python pip install -r requirements_dev.txt"
 
 test_script:
   - echo "Test stage..."

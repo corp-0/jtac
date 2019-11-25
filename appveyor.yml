@@ -7,15 +7,6 @@ environment:
     TWINE_PASSWORD:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
   matrix:
-    - PYTHON: "C:\\Python36"
-      TOXENV: "py36"
-
-    - PYTHON: "C:\\Python36-x64"
-      TOXENV: "py36"
-
-    - PYTHON: "C:\\Python37"
-      TOXENV: "py37"
-
     - PYTHON: "C:\\Python37-x64"
       TOXENV: "py37"
 
@@ -40,7 +31,8 @@ deploy_script:
   - "echo [pypi] > %USERPROFILE%\\.pypirc"
   - "echo username: %TWINE_USERNAME% >> %USERPROFILE%\\.pypirc"
   - "echo password: %TWINE_PASSWORD% >> %USERPROFILE%\\.pypirc"
-  - python setup.py sdist bdist_wheel upload
+  - python setup.py sdist bdist_wheel
+  - twine upload dist\*
 
 artifacts:
   - path: dist\*

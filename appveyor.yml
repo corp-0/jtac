@@ -31,9 +31,9 @@ install:
 
 test_script:
   - echo "Test stage..."
-  - "python3 tox"
+  - "python tox"
 
 deploy_script:
   - echo "Deploy stage..."
-  - "python3 -m setup.py changelog"
-  - "python3 -m setup.py publish"
+  - "python -m setup.py changelog"
+  - "python -m setup.py publish"

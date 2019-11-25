@@ -13,8 +13,6 @@ environment:
 
   matrix:
       - PYTHON: "C:\\Python38-x64"
-        PYTHON_VERSION: "3.8.x"
-        ARCH: "64"
         WINDOWS_SDK_VERSION: "v7.1"
         PLAT_NAME: "win-amd64"
         PY_TAG: "py37"
@@ -23,7 +21,7 @@ build: false
 
 install:
   - echo "Installing stage..."
-  - echo %PYTHON_VERSION%
+  - python --version
   - set PATH=%PYTHON%\\scripts;%PATH%
   - pip install -r requirements_dev.txt
   - pip install -r requirements_test.txt

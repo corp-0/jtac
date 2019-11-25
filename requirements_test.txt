@@ -3,4 +3,3 @@ Click==7.0
 pypiwin32
 six==1.13.0
 WMI==1.4.9
-python-semantic-release==4.3.3

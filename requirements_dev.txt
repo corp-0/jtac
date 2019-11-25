@@ -6,3 +6,4 @@ tox
 coverage
 Sphinx
 twine
+python-semantic-release==4.3.3

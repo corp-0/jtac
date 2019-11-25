@@ -24,7 +24,6 @@ install:
   - python --version
   - set PATH=%PYTHON%\\scripts;%PATH%
   - pip install -r requirements_dev.txt
-  - pip install -r requirements_test.txt
 
 test_script:
   - echo "Test stage..."
@@ -32,5 +31,5 @@ test_script:
 
 deploy_script:
   - echo "Deploy stage..."
-  - setup.py changelog
-  - setup.py publish
+  - "%PYTHON%/Scripts/python.exe setup.py changelog"
+  - "%PYTHON%/Scripts/python.exe setup.py publish"

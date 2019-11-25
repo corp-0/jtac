@@ -10,26 +10,30 @@ environment:
     PYPI_USERNAME: corp-0
     PYPI_PASSWORD:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
+    CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
   matrix:
-      - PYTHON: "C:\\Python38-x64"
-        WINDOWS_SDK_VERSION: "v7.1"
-        PLAT_NAME: "win-amd64"
-        PY_TAG: "py37"
+    - PYTHON: "C:\\Python37-x64"
+      PYTHON_VERSION: "3.7.x"
+      PYTHON_ARCH: "64"
+      PY_TAG: "py37"
 
 build: false 
 
 install:
   - echo "Installing stage..."
-  - python --version
-  - set PATH=%PYTHON%\\scripts;%PATH%
-  - pip install -r requirements_dev.txt
+  - "%PYTHON%\\python.exe -m pip install wheel nose"
+  - ps: if (-not(Test-Path($env:PYTHON))) { & appveyor\install.ps1 }
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "python --version"
+  - "pip install --disable-pip-version-check --user --upgrade pip"
+  - "%CMD_IN_ENV% python pip install -r requirements_dev.txt"
 
 test_script:
   - echo "Test stage..."
-  - "%PYTHON%/Scripts/tox"
+  - "%CMD_IN_ENV% tox"
 
 deploy_script:
   - echo "Deploy stage..."
-  - "%PYTHON%/Scripts/python.exe setup.py changelog"
-  - "%PYTHON%/Scripts/python.exe setup.py publish"
+  - "%CMD_IN_ENV% python -m setup.py changelog"
+  - "%CMD_IN_ENV% python -m setup.py publish"

@@ -38,7 +38,7 @@ test_script:
 
 deploy_script:
   - "echo [pypi] > %USERPROFILE%\\.pypirc"
-  - "echo username: user >> %USERPROFILE%\\.pypirc"
+  - "echo username: %TWINE_USERNAME% >> %USERPROFILE%\\.pypirc"
   - "echo password: %TWINE_PASSWORD% >> %USERPROFILE%\\.pypirc"
   - python setup.py sdist bdist_wheel upload
 

@@ -12,8 +12,8 @@ environment:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
 
   matrix:
-      - PYTHON: "C:\\Python37-x64"
-        PYTHON_VERSION: "3.7.x"
+      - PYTHON: "C:\\Python38-x64"
+        PYTHON_VERSION: "3.8.x"
         ARCH: "64"
         WINDOWS_SDK_VERSION: "v7.1"
         PLAT_NAME: "win-amd64"

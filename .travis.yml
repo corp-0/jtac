@@ -1,19 +1,19 @@
-language: python
-python:
-- 3.7
-- 3.6
-before-install:
-  - pip install -r requirements_test.txt
-  - pip install -r requirements_dev.txt
-install: pip install -U tox-travis
-script: tox
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: corp-0
-  password:
-    secure: Dr0NgajRfiRKdrPOnh+MAQwb+EzNQKLzZZ9oS7VtJzLyK40dC19bb8+iK9q9Xh11YDS/vDeRmWjlCmMUuKwqCJCg+c42y7yeD3elRZPR6n/r4ZCjUuw1JtScdgb3/ueZuyHtHQ5tvJ7uIwuEY+MzvwMcVJLRsRJ4rkugze+h9i6Rod4mRBfQngBj3Brg0okeG5vvPXMxvrqRZTGJhjd4ucOH4ho5vO8RHqeBPTHopY6JtS1bKrrmFlV6N0TCuFhqnB0FY1qvrB2kUKEGasKMyDeFEK/8/QgDo9Wvs0jOPxBSSLVvvP6NXOusAG8IWMG96XZO9T61VcDCfdYANX8WcbMQQ3MMafnVVFp1t9YBkgiLDUmV8kSquX0Nuv/lFKTdX7sfM4IIPaLXGto+r4pVb8/g4Rv+UMd5mGjSCrV6C4d5N/M9nVwWjTKaTjDQPoGEdInab3lR+rxu5jk6j7WMZ/uUSKZ0UiwS1Czx/XY24Algm+ZzOHe5Pb3wPrYZnXnC5pFc1T2/mSxdvlEKT8B7NPht5dh9cmsci+iF1Zf2fuHsXG/q6hz85+haapVr4F5GSX/Fk0uClLY/3hfEJBLjidSM3aZWmp7jrsTQktO3ACHQwoVctdWbry9VbApVBIfenOmH3s+bJjNOfOdrhnTQPs7yqiVWd3XOk/lA+6/qmfM=
-  on:
-    tags: true
-    repo: corp-0/jtac
-    python: 3.7
+# language: python
+# python:
+# - 3.7
+# - 3.6
+# before-install:
+#   - pip install -r requirements_test.txt
+#   - pip install -r requirements_dev.txt
+# install: pip install -U tox-travis
+# script: tox
+# deploy:
+#   provider: pypi
+#   distributions: sdist bdist_wheel
+#   user: corp-0
+#   password:
+#     secure: Dr0NgajRfiRKdrPOnh+MAQwb+EzNQKLzZZ9oS7VtJzLyK40dC19bb8+iK9q9Xh11YDS/vDeRmWjlCmMUuKwqCJCg+c42y7yeD3elRZPR6n/r4ZCjUuw1JtScdgb3/ueZuyHtHQ5tvJ7uIwuEY+MzvwMcVJLRsRJ4rkugze+h9i6Rod4mRBfQngBj3Brg0okeG5vvPXMxvrqRZTGJhjd4ucOH4ho5vO8RHqeBPTHopY6JtS1bKrrmFlV6N0TCuFhqnB0FY1qvrB2kUKEGasKMyDeFEK/8/QgDo9Wvs0jOPxBSSLVvvP6NXOusAG8IWMG96XZO9T61VcDCfdYANX8WcbMQQ3MMafnVVFp1t9YBkgiLDUmV8kSquX0Nuv/lFKTdX7sfM4IIPaLXGto+r4pVb8/g4Rv+UMd5mGjSCrV6C4d5N/M9nVwWjTKaTjDQPoGEdInab3lR+rxu5jk6j7WMZ/uUSKZ0UiwS1Czx/XY24Algm+ZzOHe5Pb3wPrYZnXnC5pFc1T2/mSxdvlEKT8B7NPht5dh9cmsci+iF1Zf2fuHsXG/q6hz85+haapVr4F5GSX/Fk0uClLY/3hfEJBLjidSM3aZWmp7jrsTQktO3ACHQwoVctdWbry9VbApVBIfenOmH3s+bJjNOfOdrhnTQPs7yqiVWd3XOk/lA+6/qmfM=
+#   on:
+#     tags: true
+#     repo: corp-0/jtac
+#     python: 3.7

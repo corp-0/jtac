@@ -9,6 +9,10 @@ JTAC
 .. image:: https://img.shields.io/travis/corp-0/jtac.svg
         :target: https://travis-ci.org/corp-0/jtac
 
+.. image:: https://ci.appveyor.com/api/projects/status/4j96owvv7ffjkac6?svg=true
+        :target: https://https://ci.appveyor.com/project/corp-0/jtac
+
+
 .. image:: https://readthedocs.org/projects/arma-serveradmin/badge/?version=latest
         :target: https://arma-serveradmin.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status

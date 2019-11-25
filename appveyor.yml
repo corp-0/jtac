@@ -7,19 +7,32 @@ environment:
     TWINE_PASSWORD:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
     TWINE_NON_INTERACTIVE: true
+    PYPI_USERNAME: corp-0
+    PYPI_PASSWORD:
+      secure: 9jcsB3jHY41yPhv+OXDC2w==
+
   matrix:
-  - TOXENV: py35
-  - TOXENV: py36
-  - TOXENV: py37
+      - PYTHON: "C:\\Python37-x64"
+        PYTHON_VERSION: "3.7.x"
+        ARCH: "64"
+        WINDOWS_SDK_VERSION: "v7.1"
+        PLAT_NAME: "win-amd64"
+        PY_TAG: "py37"
 
 build: false 
 
 install:
-- pip install tox
+  - echo "Installing stage..."
+  - echo %PYTHON_VERSION%
+  - set PATH=%PYTHON%\\scripts;%PATH%
+  - pip install -r requirements_dev.txt
+  - pip install -r requirements_test.txt
 
 test_script:
-- tox virtualenv
+  - echo "Test stage..."
+  - "%PYTHON%/Scripts/tox"
 
 deploy_script:
-  - python setup.py sdist bdist_wheel
-  - twine upload dist\*
+  - echo "Deploy stage..."
+  - "%PYTHON%/Scripts/python setup.py changelog"
+  - "%PYTHON%/Scripts/python setup.py publish"

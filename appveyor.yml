@@ -8,9 +8,9 @@ environment:
       secure: 9jcsB3jHY41yPhv+OXDC2w==
     TWINE_NON_INTERACTIVE: true
   matrix:
-  - TOXENV: py36
-  - TOXENV: py37
-  - TOXENV: py38
+  - TOXENV: "C:\\Python35-x64"
+  - TOXENV: "C:\\Python36-x64"
+  - TOXENV: "C:\\Python37-x64"
 
 build: false 
 

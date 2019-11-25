@@ -34,5 +34,5 @@ test_script:
 
 deploy_script:
   - echo "Deploy stage..."
-  - "%PYTHON%/Scripts/python setup.py changelog"
-  - "%PYTHON%/Scripts/python setup.py publish"
+  - setup.py changelog"
+  - setup.py publish"

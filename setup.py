@@ -4,6 +4,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+import sys
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -11,6 +12,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
+try:
+    from semantic_release import setup_hook
+    setup_hook(sys.argv)
+except ImportError:
+    pass
 
 with open('requirements.txt') as f:
     reqs = f.read().splitlines()
@@ -59,6 +65,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/corp-0/jtac',
-    version='0.1.1',
+    version='1.0.0',
     zip_safe=False,
 )

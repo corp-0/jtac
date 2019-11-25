@@ -31,7 +31,7 @@ install:
 
 test_script:
   - echo "Test stage..."
-  - "%PYTHON% tox"
+  - "python3 tox"
 
 deploy_script:
   - echo "Deploy stage..."

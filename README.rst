@@ -6,9 +6,6 @@ JTAC
 .. image:: https://img.shields.io/pypi/v/jtac.svg
         :target: https://pypi.python.org/pypi/jtac
 
-.. image:: https://img.shields.io/travis/corp-0/jtac.svg
-        :target: https://travis-ci.org/corp-0/jtac
-
 .. image:: https://ci.appveyor.com/api/projects/status/4j96owvv7ffjkac6?svg=true
         :target: https://https://ci.appveyor.com/project/corp-0/jtac
 
@@ -48,8 +45,8 @@ so they can be used later. JTAC will try to operate your servers based on the po
 
 To Do
 ------
-``jtac radio <command>`` a native way to remotely send commands to your server box.
-
+- ``jtac radio <command>`` a native way to remotely send commands to your server box.
+- Linux support
 
 Credits
 -------
